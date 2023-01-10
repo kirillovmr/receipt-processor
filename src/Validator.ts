@@ -19,7 +19,7 @@ export abstract class Validator {
      */
     protected static _isObject(input: any) {
         const valid = (
-            input
+            !!input
             && typeof input === 'object'
             && !Array.isArray(input)
         )
@@ -31,7 +31,7 @@ export abstract class Validator {
      */
     protected static _isArray(input: any) {
         const valid = (
-            input
+            !!input
             && typeof input === 'object'
             && Array.isArray(input)
         )
@@ -42,7 +42,7 @@ export abstract class Validator {
      * Check whether input is a valid string
      */
     protected static __isString(value: any): boolean {
-        return value && typeof value === 'string'
+        return !!value && typeof value === 'string'
     }
 
     /**
