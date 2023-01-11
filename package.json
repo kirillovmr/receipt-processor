@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "rimraf ./dist && tsc",
+    "build": "rimraf ./dist && tsc && npm run copy-files",
     "start:dev": "npx nodemon",
-    "start": "npm run build && npm run copy-files && node dist/index.js",
+    "start": "npm run build && node dist/index.js",
     "copy-files": "copyfiles -u 1 src/**/*.html dist/"
   },
   "repository": {
