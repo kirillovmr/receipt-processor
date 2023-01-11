@@ -25,7 +25,7 @@ const RECEIPTS: {
  * Return a project description file on base page load
  */
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/public/index.html')
 })
 
 
