@@ -22,6 +22,14 @@ const RECEIPTS: {
 
 
 /**
+ * Return a project description file on base page load
+ */
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html')
+})
+
+
+/**
  * Submits a receipt for processing
  */
 app.post('/receipts/process', (req, res) => {
@@ -32,7 +40,7 @@ app.post('/receipts/process', (req, res) => {
     if (!receiptValidatorRes.valid) {
         return res
             .status(400)
-            .send(`The receipt is invalid: ${receiptValidatorRes.error}`)
+            .send(`v: ${receiptValidatorRes.error}`)
     }
 
     // Generate unique id
